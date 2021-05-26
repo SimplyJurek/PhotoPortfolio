@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php 
+        require('headLinks.php');
+    ?>
 
     <link rel="stylesheet" href="style.css">
 
@@ -11,23 +11,9 @@
 </head>
 <body>
     
-    <nav class="nav-bar">
-        <div class="logo-container">
-            <h3 class="logo-text">Jerzy Baldy</h3>
-        </div>
-        <ul class="nav-list">
-            <li><a href="#" class="nav-links">Home</a></li>
-            <li><a href="#" class="nav-links">About Me</a></li>
-            <li><a href="#" class="nav-links">Contact</a></li>
-            <li><a href="#" class="nav-links">Gallery</a></li>
-            <li><a href="#" class="nav-links">Log In</a></li>
-        </ul>
-        <div class="drop-down">
-            <div class="line-one"></div>
-            <div class="line-two"></div>
-            <div class="line-three"></div>
-        </div>
-    </nav>
+    <?php
+        require('navBar.php');
+    ?>
     
     <header class="welcome-container">
         <div class="welcome-img-container">
@@ -68,11 +54,9 @@
             </div>
         </section>
 
-        <footer class="footer-container">
-            <address class="footer-text">
-                Made by <a href="#" class="footer-link">Jerzy Baldy</a>, 2021
-            </address>
-        </footer>
+        <?php 
+            require('footer.php');
+        ?>
 
     </main>
     
