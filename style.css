@@ -1,0 +1,499 @@
+/*----FONTS----*/
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*----VARIABLES----*/
+
+:root {
+  --bg-dark: rgb(0, 0, 0);
+  --bg-medium: rgb(85, 85, 85);
+  --bg-light: rgb(170, 170, 170);
+  --accent: rgb(255, 255, 255);
+}
+
+/*----GENERAL----*/
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/*----NAVBAR----*/
+
+.nav-bar {
+  display: flex;
+
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+
+  height: 8vh;
+
+  border-bottom: 0.1rem solid var(--accent);
+  background-color: var(--bg-dark);
+
+  overflow: hidden;
+}
+
+.logo-text {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+.drop-down {
+  cursor: pointer;
+}
+
+.drop-down div {
+  width: 2rem;
+  height: 0.25em;
+  margin: 0.25em;
+
+  border-radius: 0.5rem;
+
+  background-color: var(--accent);
+
+  transition: all 0.5s ease-out;
+}
+
+.toggle .line-one {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line-two {
+  opacity: 0;
+}
+
+.toggle .line-three {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  top: 8vh;
+  right: 0;
+  transform: translateX(100%);
+
+  justify-content: space-evenly;
+  align-items: center;
+
+  height: 92vh;
+  width: 60vw;
+
+  list-style: none;
+
+  background-color: var(--bg-dark);
+
+  transition: all 0.5s ease-out;
+}
+
+.nav-list-active {
+  transform: translateX(0%);
+}
+
+.nav-bar-active {
+  overflow: unset;
+}
+
+.nav-links {
+  text-decoration: none;
+  color: var(--accent);
+  letter-spacing: 0.4em;
+  font-weight: 200;
+
+  transition: opacity 250ms ease;
+}
+
+.nav-links:hover,
+.nav-links:focus {
+  opacity: 0.5;
+}
+
+@media only screen and (min-width: 768px) {
+  .drop-down {
+    display: none;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    transform: translateX(0);
+    position: inherit;
+    font-size: 0.7rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .nav-list {
+    font-size: 1rem;
+  }
+
+  .logo-text {
+    font-size: 1.75rem;
+  }
+}
+
+/*----HEADER----*/
+
+.welcome-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 92vh;
+  padding: 1em;
+  background-color: var(--accent);
+  box-shadow: 0 0 10em rgba(0, 0, 0, 0.7) inset;
+}
+
+.welcome-img {
+  height: 12.5em;
+  width: auto;
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  animation: photoSpin 500ms 1s ease-in;
+}
+
+.welcome-text {
+  letter-spacing: 0.2em;
+  font-weight: 300;
+}
+
+@keyframes photoSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .welcome-img {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .welcome-img {
+    height: 20em;
+  }
+
+  .welcome-text {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .welcome-img {
+    height: 25em;
+  }
+
+  .welcome-text {
+    font-size: 5rem;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+  }
+}
+
+/*----QUOTE SECTION----*/
+
+.quote-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 2em;
+  background-image: url('IMG/quote-img.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--accent);
+}
+
+.quote-text {
+  font-weight: 400;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.quote-author {
+  font-weight: 200;
+  padding-top: 1em;
+  color: var(--accent);
+}
+
+@media only screen and (max-width: 400px) {
+  .quote-text {
+    font-size: 1.25em;
+  }
+
+  .quote-author {
+    font-size: 0.75em;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .quote-text {
+    font-size: 1.75em;
+  }
+
+  .quote-author {
+    font-size: 1.25em;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .quote-text {
+    font-size: 2em;
+    letter-spacing: 0.1em;
+  }
+
+  .quote-author {
+    font-size: 1.5em;
+  }
+}
+
+/*-----STORY----*/
+
+.my-story-container {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  box-shadow: 0 0 5em rgba(0, 0, 0, 0.7) inset;
+}
+
+.my-story-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  font-size: 1.25em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.my-story-text {
+  padding: 2em 2em;
+  text-align: justify;
+  font-size: 0.8em;
+  max-width: 60ch;
+}
+
+.my-story-img {
+  max-height: 40vh;
+  width: auto;
+  max-width: 100%;
+  padding: 0 2em;
+}
+
+.my-story-button-container {
+  display: flex;
+  height: 92vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.my-story-button-link {
+  text-decoration: none;
+  color: var(--bg-dark);
+  font-size: 1.25rem;
+  padding: 1em 2em;
+  border-radius: 1em;
+  box-shadow: 0 0 5em rgba(0, 0, 0, 0.3);
+  transition: all 350ms ease-out;
+}
+
+.my-story-button-link:hover,
+.my-story-button-link:focus {
+  background-color: var(--bg-dark);
+  color: var(--accent);
+  box-shadow: 0 0 5em rgba(0, 0, 0, 0.7);
+}
+
+@media only screen and (min-width: 992px) {
+  .my-story-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .my-story-heading {
+    align-items: flex-end;
+    height: 20vh;
+    padding-bottom: 1em;
+    font-size: 2em;
+    grid-column: 1 / span 2;
+  }
+
+  .my-story-text {
+    font-size: 1em;
+    background-color: var(--bg-dark);
+    color: var(--accent);
+    transition: all 350ms;
+  }
+
+  .my-story-text:hover {
+    border: 0.2em solid var(--bg-dark);
+    background-color: var(--accent);
+    color: var(--bg-dark);
+  }
+
+  #text-two {
+    grid-column: 1;
+    grid-row: 4;
+  }
+
+  #img-two {
+    grid-column: 2;
+  }
+
+  .my-story-button-container {
+    grid-column: 1 / span 2;
+  }
+
+  .my-story-button-link {
+    font-size: 2rem;
+  }
+}
+
+/*----PHOTO COUNTER-----*/
+
+.counter-section {
+  display: flex;
+  height: 84vh;
+  justify-content: center;
+  align-items: center;
+  background-image: url('IMG/counter-img.JPG');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 5em rgba(0, 0, 0, 0.7) inset;
+}
+
+.counter-text {
+  display: inline-block;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding: 1.5em 0;
+  width: 100%;
+}
+
+.counter {
+  display: inline-block;
+  font-size: 1.5em;
+  font-weight: 600;
+  width: 100%;
+}
+
+.counter-link {
+  display: inline-block;
+  text-align: center;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 1em;
+  background-color: var(--bg-dark);
+  border-radius: 0.5em;
+  font-weight: 200;
+  letter-spacing: 0.2em;
+  width: 100%;
+  transition: all 350ms ease-out;
+}
+
+.counter-link:hover,
+.counter-link:focus {
+  background-color: var(--accent);
+  color: var(--bg-dark);
+}
+
+@media only screen and (min-width: 768px) {
+  .counter-text {
+    font-size: 1.5em;
+  }
+
+  .counter {
+    font-size: 2em;
+    letter-spacing: 0.5em;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .counter-text {
+    font-size: 2em;
+  }
+
+  .counter {
+    font-size: 2.5em;
+    letter-spacing: 0.5em;
+  }
+
+  .counter-link {
+    font-size: 1.25em;
+  }
+}
+
+/*----FOOTER----*/
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8vh;
+  background-color: var(--bg-dark);
+  border-top: 0.1em solid var(--accent);
+}
+
+.footer-text {
+  color: var(--accent);
+  font-size: 0.75em;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: var(--accent);
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.25em;
+  padding: 0 0.5em;
+  transition: all 350ms ease-out;
+}
+
+.footer-link:hover,
+.footer-link:focus {
+  opacity: 0.5;
+}
+
+@media only screen and (min-width: 992px) {
+  .footer-text {
+    font-size: 1em;
+  }
+}
