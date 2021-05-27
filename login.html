@@ -1,11 +1,13 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jerzy Baldy</title>
+
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style-gallery.css">
+
+    <title>Jerzy Baldy</title>
 </head>
 <body>
     <nav class="nav-bar">
@@ -13,12 +15,12 @@
             <h3 class="logo-text">Jerzy Baldy</h3>
         </div>
         <ul class="nav-list">
+
             <li><a href="index.html" class="nav-links">Home</a></li>
             <li><a href="aboutme.html" class="nav-links">About Me</a></li>
-            <li><a href="contact.html" class="nav-links">Contact</a></li>
+            <li><a href="contact.html" class="nav-links">Contact</a></li>        
             <li><a href="gallery.html" class="nav-links">Gallery</a></li>
             <li><a href="login.html" class="nav-links">Log In</a></li>
-
         </ul>
         <div class="drop-down">
             <div class="line-one"></div>
@@ -27,13 +29,19 @@
         </div>
     </nav>
 
-    <main class="slide-player">
+    <main class="login-main">
+        <p class="login-text">Log in or create an account to contact me directly on the website!</p>
 
+        <form action="" method="post" class="login-form">
+            <input type="text" name="uid" id="uid" class="login-uid" placeholder="Login">
+            <input type="password" name="pwd" id="pwd" class="login-pwd" placeholder="Password">
+            <input type="submit" value="Log In" name="login-submit" id="login-submit" class="login-submit">
+        </form>
+
+        <p class="login-text-two">Don't have an account? No problem!</p>
+
+       <a href="signup.html" class="signup-link">Sign Up</a>
     </main>
-
-    <ul class="thumbnails-gallery"></ul>
-
-
 
     <footer class="footer-container">
         <address class="footer-text">
@@ -41,13 +49,6 @@
         </address>
     </footer>
 
-    <template class="thumbnail-template">
-        <li class="thumbnail">
-            <img class="thumbnail-img" src="Gallery/3.jpeg">
-        </li>
-    </template>
-    
-    <script src='hamburger.js'></script>
-    <script src="gallery.js"></script>
+    <script src="hamburger.js"></script>
 </body>
 </html>

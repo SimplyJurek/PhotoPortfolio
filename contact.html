@@ -1,13 +1,15 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jerzy Baldy</title>
+
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style-gallery.css">
+    <title>Jerzy Baldy</title>
 </head>
 <body>
+
     <nav class="nav-bar">
         <div class="logo-container">
             <h3 class="logo-text">Jerzy Baldy</h3>
@@ -18,7 +20,6 @@
             <li><a href="contact.html" class="nav-links">Contact</a></li>
             <li><a href="gallery.html" class="nav-links">Gallery</a></li>
             <li><a href="login.html" class="nav-links">Log In</a></li>
-
         </ul>
         <div class="drop-down">
             <div class="line-one"></div>
@@ -27,12 +28,20 @@
         </div>
     </nav>
 
-    <main class="slide-player">
+    <main class="contact-main">
+
+        <section class="contact-form-container">
+            <form action="" method="post" class="contact-form">
+                <input type="text" name="name" id="name" placeholder="Your name" class="contact-form-name">
+                <input type="email" name="email" id="email" placeholder="example@email.com" class="contact-form-email" required>
+                <textarea name="msg" id="msg" placeholder="Your message" class="contact-form-msg"></textarea>
+
+                <input type="submit" value="Send message" class="contact-form-submit">
+            </form>
+        </section>
 
     </main>
-
-    <ul class="thumbnails-gallery"></ul>
-
+    
 
 
     <footer class="footer-container">
@@ -41,13 +50,6 @@
         </address>
     </footer>
 
-    <template class="thumbnail-template">
-        <li class="thumbnail">
-            <img class="thumbnail-img" src="Gallery/3.jpeg">
-        </li>
-    </template>
-    
-    <script src='hamburger.js'></script>
-    <script src="gallery.js"></script>
+    <script src="hamburger.js"></script>
 </body>
 </html>
