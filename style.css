@@ -567,3 +567,63 @@ img {
     column-rule: 0.1em solid var(--bg-dark);
   }
 }
+
+/*----CONTACT-----*/
+
+.contact-main {
+  min-height: 84vh;
+  background: var(--bg-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-form-container {
+  background: var(--accent);
+  height: 100%;
+  width: 100%;
+  padding: 3em;
+  margin: 0 2em;
+  border-radius: 1em;
+  box-shadow: 0 0 5em rgba(0, 0, 0, 0.3) inset;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-form > * {
+  padding: 0.5em;
+  margin: 0.3em 0;
+  border: 0.1em solid var(--bg-light);
+  border-radius: 0.5em;
+  width: 100%;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.1) inset;
+  font-weight: 200;
+}
+
+.contact-form-msg {
+  resize: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin: 2em 0;
+  height: 15vh;
+  transition: height 350ms ease-in-out;
+}
+
+.contact-form-msg:focus {
+  height: 35vh;
+}
+
+.contact-form-submit {
+  box-shadow: unset;
+  width: 60%;
+  padding: 1em;
+}
+
+.contact-form-submit:is(:hover, :focus) {
+  background: var(--bg-dark);
+  color: var(--accent);
+}
