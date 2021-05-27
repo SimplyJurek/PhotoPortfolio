@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php 
-        require('headLinks.php');
-    ?>
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style-about-me.css">
+
     <link rel="stylesheet" href="style.css">
 
 
     <title>Jerzy Baldy</title>
 </head>
 <body>
-    <?php 
-        require('navBar.php');
-    ?>
-
+<nav class="nav-bar">
+        <div class="logo-container">
+            <h3 class="logo-text">Jerzy Baldy</h3>
+        </div>
+        <ul class="nav-list">
+            <li><a href="index.php" class="nav-links">Home</a></li>
+            <li><a href="aboutme.php" class="nav-links">About Me</a></li>
+            <li><a href="#" class="nav-links">Contact</a></li>
+            <li><a href="#" class="nav-links">Gallery</a></li>
+            <li><a href="#" class="nav-links">Log In</a></li>
+        </ul>
+        <div class="drop-down">
+            <div class="line-one"></div>
+            <div class="line-two"></div>
+            <div class="line-three"></div>
+        </div>
+    </nav>
     <main>
         <section class="about-me-container">
 
@@ -27,9 +40,11 @@
         </section>
     </main>
 
-    <?php 
-        require('footer.php');
-    ?>
+    <footer class="footer-container">
+            <address class="footer-text">
+                Made by <a href="#" class="footer-link">Jerzy Baldy</a>, 2021
+            </address>
+        </footer>
     
     <script src="app.js"></script>
 
