@@ -6,18 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="style.css">
+
     <title>Jerzy Baldy</title>
 </head>
 <body>
-
     <nav class="nav-bar">
         <div class="logo-container">
             <h3 class="logo-text">Jerzy Baldy</h3>
         </div>
         <ul class="nav-list">
+
             <li><a href="index.html" class="nav-links">Home</a></li>
             <li><a href="aboutme.html" class="nav-links">About Me</a></li>
-            <li><a href="contact.html" class="nav-links">Contact</a></li>
+            <li><a href="contact.html" class="nav-links">Contact</a></li>        
             <li><a href="gallery.html" class="nav-links">Gallery</a></li>
             <li><a href="login.html" class="nav-links">Log In</a></li>
         </ul>
@@ -28,21 +29,19 @@
         </div>
     </nav>
 
-    <main class="contact-main">
+    <main class="login-main">
+        <p class="login-text">Log in or create an account to contact me directly on the website!</p>
 
-        <section class="contact-form-container">
-            <form action="" method="post" class="contact-form">
-                <input type="text" name="name" id="name" placeholder="Your name" class="contact-form-name">
-                <input type="email" name="email" id="email" placeholder="example@email.com" class="contact-form-email" required>
-                <textarea name="msg" id="msg" placeholder="Your message" class="contact-form-msg"></textarea>
+        <form action="" method="post" class="login-form">
+            <input type="text" name="uid" id="uid" class="login-uid" placeholder="Login">
+            <input type="password" name="pwd" id="pwd" class="login-pwd" placeholder="Password">
+            <input type="submit" value="Log In" name="login-submit" id="login-submit" class="login-submit">
+        </form>
 
-                <input type="submit" value="Send message" class="contact-form-submit">
-            </form>
-        </section>
+        <p class="login-text-two">Don't have an account? No problem!</p>
 
+       <a href="signup.html" class="signup-link">Sign Up</a>
     </main>
-    
-
 
     <footer class="footer-container">
         <address class="footer-text">
