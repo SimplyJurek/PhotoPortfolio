@@ -29,6 +29,143 @@ img {
   height: auto;
 }
 
+<<<<<<< Updated upstream
+=======
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 1em;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.3) inset;
+}
+
+/*----LOADER----*/
+
+.loader-wrapper {
+  --line-width: 5px;
+  --curtain-color: rgb(0, 0, 0);
+  --outer-line-color: rgb(255, 255, 255);
+  --middle-line-color: rgb(170, 170, 170);
+  --inner-line-color: rgb(85, 85, 85);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.loader {
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  /*   transform: translate(-50%, -50%); */
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: var(--line-width) solid transparent;
+  border-top-color: var(--outer-line-color);
+  border-radius: 100%;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  z-index: 1001;
+}
+
+.loader:before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  border: var(--line-width) solid transparent;
+  border-top-color: var(--inner-line-color);
+  border-radius: 100%;
+  -webkit-animation: spin 3s linear infinite;
+  animation: spin 3s linear infinite;
+}
+
+.loader:after {
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  border: var(--line-width) solid transparent;
+  border-top-color: var(--middle-line-color);
+  border-radius: 100%;
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.loader-wrapper .loader-section {
+  position: fixed;
+  top: 0;
+  background: var(--curtain-color);
+  width: 51%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.loader-wrapper .loader-section.section-left {
+  left: 0;
+}
+.loader-wrapper .loader-section.section-right {
+  right: 0;
+}
+
+.loaded .loader-wrapper .loader-section.section-left {
+  transform: translateX(-100%);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.loaded .loader-wrapper .loader-section.section-right {
+  transform: translateX(100%);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.loaded .loader {
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+.loaded .loader-wrapper {
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition: all 0.3s 1s ease-out;
+}
+
+>>>>>>> Stashed changes
 /*----NAVBAR----*/
 
 .nav-bar {
@@ -626,4 +763,125 @@ img {
 .contact-form-submit:is(:hover, :focus) {
   background: var(--bg-dark);
   color: var(--accent);
+<<<<<<< Updated upstream
+=======
+  box-shadow: 0 0 2em rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (min-width: 768px) {
+  .contact-main {
+    background-image: url('IMG/contact-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+/*----GALLERY----*/
+
+.thumbnails-gallery {
+  padding: 2em;
+  list-style-type: none;
+  box-shadow: 0 0 10em rgba(0, 0, 0, 0.7) inset;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+}
+.thumbnail {
+  padding: 1em 1em;
+  max-width: 100%;
+}
+
+.thumbnail img {
+  cursor: pointer;
+  max-width: 100%;
+}
+
+.slide-player {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .thumbnails-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/*----LOG IN-----*/
+
+.login-main {
+  min-height: 84vh;
+  box-shadow: 0 0 10em rgba(0, 0, 0, 0.7) inset;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 100vw;
+  grid-template-rows: 10vh 10vh 44vh 5vh 5vh 10vh;
+  grid-template-areas:
+    '.'
+    'login-text'
+    'login-form'
+    'login-text-two'
+    'signup-link'
+    '.';
+}
+
+.login-text {
+  grid-area: login-text;
+  text-align: center;
+  font-size: 1.15rem;
+  padding: 0 2em;
+}
+
+.login-form {
+  grid-area: login-form;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 5em;
+}
+
+.login-form > * {
+  padding: 0.5em 1em;
+  margin: 0.5em 0;
+  border-radius: 0.5em;
+  border: 0.1em solid var(--bg-light);
+}
+
+.login-uid,
+.login-pwd {
+  width: 15em;
+}
+
+.login-submit {
+  width: 10em;
+  margin-top: 2.5em;
+  padding: 0.5em;
+  font-size: 1rem;
+  transition: all 350ms ease-in-out;
+  cursor: pointer;
+}
+
+.login-text-two {
+  font-size: 1rem;
+  grid-area: login-text-two;
+  padding-bottom: 1em;
+}
+
+.signup-link {
+  grid-area: signup-link;
+  border: 0.1em solid var(--bg-light);
+  padding: 0.5em 2.5em;
+  border-radius: 0.5em;
+  text-decoration: none;
+  color: var(--bg-dark);
+  transition: all 350ms ease-in-out;
+}
+
+.signup-link:is(:hover, :focus),
+.login-submit:is(:hover, :focus) {
+  background: var(--bg-dark);
+  color: var(--accent);
+  box-shadow: 0 0 5em rgba(0, 0, 0, 0.3);
+>>>>>>> Stashed changes
 }
