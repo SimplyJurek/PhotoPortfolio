@@ -1,27 +1,27 @@
 .thumbnails-gallery {
-    padding: 2em;
-    list-style-type: none;
-    box-shadow: 0 0 10em rgba(0, 0 , 0, 0.7) inset;
-    display: grid;
-    grid-template-columns: 1fr;
-    place-items: center;
+  padding: 2em;
+  list-style-type: none;
+  box-shadow: 0 0 10em rgba(0, 0, 0, 0.7) inset;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
 }
 .thumbnail {
-    padding: 1em 1em;
-    max-width: 100%;
+  padding: 1em 1em;
+  max-width: 100%;
 }
 
 .thumbnail img {
-    cursor: pointer;
-    max-width: 100%;
+  cursor: pointer;
+  max-width: 100%;
 }
 
 .slide-player {
-    display: none;
+  display: none;
 }
 
 @media only screen and (min-width: 768px) {
-    .thumbnails-gallery {
-        grid-template-columns: 1fr 1fr;
-    }
+  .thumbnails-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
 }
