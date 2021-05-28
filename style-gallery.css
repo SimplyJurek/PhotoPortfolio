@@ -2,6 +2,7 @@
   padding: 2em;
   list-style-type: none;
   box-shadow: 0 0 10em rgba(0, 0, 0, 0.7) inset;
+
   display: grid;
   grid-template-columns: 1fr;
   place-items: center;
@@ -13,7 +14,7 @@
 
 .thumbnail img {
   cursor: pointer;
-  max-width: 100%;
+  max-width: 70vw;
 }
 
 .slide-player {
@@ -30,30 +31,36 @@
   .thumbnail-img {
     height: 20vh;
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+    width: auto;
   }
   .slide-player {
-    display:none;
-    position:absolute;
+    display: none;
+    position: absolute;
     top: 8vh;
-    left:0;
+    left: 0;
     height: 92vh;
     width: 100vw;
 
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     align-items: center;
 
-    background-color:rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
   }
   .slide-player-active {
     display: flex;
+    position: sticky;
+    top: 8vh;
+    left: 0;
   }
   .slide-img {
     max-width: 70vw;
+    width: auto;
+
     max-height: 85vh;
-    box-shadow: 0 0 1em rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10em rgba(0, 0, 0, 0.5);
   }
   /* .body-slide { /* scroll lock for when the slide-player is shown*/
-    /* overflow-y: scroll;
+  /* overflow-y: scroll;
   }
   body {
     overflow: hidden;
@@ -63,29 +70,37 @@
     height: 20vh;
 
     border: none;
-    background-color: rgb(0,0,0);
-    box-shadow: 0 0 1em rgba(255, 255, 255, 0.5);
-    color: white;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0.5em;
+    font-size: 5em;
+    color: var(--bg-dark);
     cursor: pointer;
+
+    transition: all 250ms ease-in;
   }
-  .close-player{
+
+  .slide-nav:is(:hover, :focus) {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .close-player {
     display: none;
     position: absolute;
-    right: 0;
+    right: 5vw;
     top: 8vh;
 
-    height:5vh;
+    height: 5vh;
     width: 5vh;
 
-    background-color: rgb(0,0,0);
-    box-shadow: 0 0 1em rgba(255, 255, 255, 0.5);
-    color: white;
-    font-size: medium;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0.5em;
+    color: var(--bg-dark);
+    font-size: 1.5em;
 
     border: none;
     cursor: pointer;
   }
-  .close-player-active{
+  .close-player-active {
     display: inline-block;
   }
 }

@@ -4,6 +4,7 @@ const slidePlayer = document.querySelector(".slide-player");
 const slideImg = document.querySelector(".slide-img");
 const closePlayerBtn = document.querySelector(".close-player")
 const body = document.querySelector("body");
+
 //NUMBER OF IMAGES IN THE GALLLERY
 
 const numOfImg = 20;
