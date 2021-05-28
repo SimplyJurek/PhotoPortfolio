@@ -34,10 +34,13 @@
             <div class="line-three"></div>
         </div>
     </nav>
-
+    
     <main class="slide-player">
-
+        <button onClick="prev();" class="slide-nav" id="nav-prev"><</button>
+        <img class="slide-img" src="#">
+        <button onClick="next();" class="slide-nav" id="nav-next">></button>
     </main>
+    <button onClick="togglePlayer();"class="close-player">x</button>
 
     <ul class="thumbnails-gallery"></ul>
 
@@ -51,7 +54,7 @@
 
     <template class="thumbnail-template">
         <li class="thumbnail">
-            <img class="thumbnail-img" src="Gallery/3.jpeg">
+            <img onClick="togglePlayer(src);" class="thumbnail-img" src="Gallery/3.jpeg">
         </li>
     </template>
     
