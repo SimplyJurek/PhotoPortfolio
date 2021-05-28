@@ -29,8 +29,6 @@ img {
   height: auto;
 }
 
-<<<<<<< Updated upstream
-=======
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -165,7 +163,6 @@ img {
   transition: all 0.3s 1s ease-out;
 }
 
->>>>>>> Stashed changes
 /*----NAVBAR----*/
 
 .nav-bar {
@@ -763,8 +760,6 @@ img {
 .contact-form-submit:is(:hover, :focus) {
   background: var(--bg-dark);
   color: var(--accent);
-<<<<<<< Updated upstream
-=======
   box-shadow: 0 0 2em rgba(0, 0, 0, 0.5);
 }
 
@@ -883,5 +878,4 @@ img {
   background: var(--bg-dark);
   color: var(--accent);
   box-shadow: 0 0 5em rgba(0, 0, 0, 0.3);
->>>>>>> Stashed changes
 }
