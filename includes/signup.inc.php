@@ -7,33 +7,35 @@
         $pwd = $_POST["pwd"];
         $repeatPwd = $_POST["repeat-pwd"];
 
-        // require_once 'dbh.inc.php';
-        // require_once 'functions.inc.php';
+        require_once 'dbh.inc.php';
+        require_once 'functions.inc.php';
 
-        // if (emptyInputSignup($email, $uid, $pwd, $repeatPwd) !== false) {
-        //     header("location: ../signup.html?error=emptyinput");
-        //     exit();
-        // }
+        if (emptyInputSignup($email, $uid, $pwd, $repeatPwd) !== false) {
+            header("location: ../signup.html?error=emptyinput");
+            exit();
+        }
 
-        // if (invalidUid($uid) !== false) {
-        //     header("location: ../signup.html?error=invaliduid");
-        //     exit();
-        // }
+        if (invalidUid($uid) !== false) {
+            header("location: ../signup.html?error=invaliduid");
+            exit();
+        }
 
-        // if (invalidEmail($email) !== false) {
-        //     header("location: ../signup.html?error=invalidemail");
-        //     exit();
-        // }
+        if (invalidEmail($email) !== false) {
+            header("location: ../signup.html?error=invalidemail");
+            exit();
+        }
 
-        // if (pwdMatch($pwd, $repeatPwd) !== false) {
-        //     header("location: ../signup.html?error=pwddontmatch");
-        //     exit();
-        // }
+        if (pwdMatch($pwd, $repeatPwd) !== false) {
+            header("location: ../signup.html?error=pwddontmatch");
+            exit();
+        }
 
-        // if (uidExists($conn, $uid) !== false) {
-        //     header("location: ../signup.html?error=uidtaken");
-        //     exit();
-        // }
+        if (uidExists($conn, $uid, $email) !== false) {
+            header("location: ../signup.html?error=uidtaken");
+            exit();
+        }
+
+        createUser($conn, $email, $uid, $pwd);
 
     }   else    {
         header("location: https://youtu.be/dQw4w9WgXcQ");
