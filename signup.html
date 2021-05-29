@@ -37,17 +37,20 @@
     </nav>
 
     <main class="login-main">
-        <p class="login-text">Log in or create an account to contact me directly on the website!</p>
+        <p class="login-text">Create an account to contact me directly on the website!<br>It's free!</p>
 
-        <form action="includes/login.inc.php" method="post" class="login-form">
+        <form action="includes/signup.inc.php" method="post" class="login-form">
+            <input type="email" name="mail" id="mail" class="login-uid" placeholder="example@email.com">
             <input type="text" name="uid" id="uid" class="login-uid" placeholder="Login">
             <input type="password" name="pwd" id="pwd" class="login-pwd" placeholder="Password">
-            <input type="submit" value="Log In" name="login-submit" id="login-submit" class="login-submit">
+            <input type="password" name="repeat-pwd" id="pwd" class="login-pwd" placeholder=" Repeat password">
+
+            <input type="submit" value="Sign Up" name="signup-submit" id="signup-submit" class="login-submit">
         </form>
 
-        <p class="login-text-two">Don't have an account? No problem!</p>
+        <p class="login-text-two">Already have an account? No problem!</p>
 
-       <a href="signup.html" class="signup-link">Sign Up</a>
+       <a href="login.html" class="signup-link">Log In</a>
     </main>
 
     <footer class="footer-container">
