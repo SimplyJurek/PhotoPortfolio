@@ -48,28 +48,64 @@ function togglePlayer(url) {
 for(var i = 0; i < numOfImg; i++) {
     imgSelector[i].src = imgArr[i+1];
 }
-console.log(imgArr);
 
 function next() {
-    if(currPhoto[31] === '.') {
-        slideImg.src = "Gallery/" +( parseInt(currPhoto[30]) + 1) + ".jpeg"
-        currPhoto = slideImg.src;
+    let urlLength = currPhoto.length;
+    
+    if(currPhoto[urlLength-7] === '/') {
+        if(currPhoto[urlLength-6] == numOfImg) {
+            slideImg.src = "Gallery/" + 1 + ".jpeg";
+            currPhoto = slideImg.src;
+        }
+        else {
+            slideImg.src = "Gallery/" +(parseInt(currPhoto[urlLength-6]) + 1) + ".jpeg"
+            currPhoto = slideImg.src;
+        }   
     }
-    else if(currPhoto[32] === '.') {
-        slideImg.src = "Gallery/" +( parseInt(currPhoto[30])*10 + parseInt(currPhoto[31]) + 1) + ".jpeg"
-        currPhoto = slideImg.src;
+    else if(currPhoto[urlLength-8] === '/') {
+        if((parseInt(currPhoto[urlLength-7])*10 + parseInt(currPhoto[urlLength-6]) == numOfImg)) {
+            slideImg.src = "Gallery/" + 1 + ".jpeg";
+            currPhoto = slideImg.src;
+        }
+        else {
+            slideImg.src = "Gallery/" +(parseInt(currPhoto[urlLength-7])*10 + parseInt(currPhoto[urlLength-6]) + 1) + ".jpeg"
+            currPhoto = slideImg.src;
+        }
+        
+    }
+    else if(currPhoto[urlLength-9] === '/') {
+        if((parseInt(currPhoto[urlLength-8])*100 + parseInt(currPhoto[urlLength-8])*10 + parseInt(currPhoto[urlLength-6])) == numOfImg) {
+            slideImg.src = "Gallery/" + 1 + ".jpeg";
+            currPhoto = slideImg.src;
+        }
+        else {
+            slideImg.src = "Gallery/" + (parseInt(currPhoto[urlLength-8])*100 + parseInt(currPhoto[urlLength-8])*10 + parseInt(currPhoto[urlLength-6])) + 1 + ".jpeg";
+            currPhoto = slideImg.src;
+        }
     }
 }
 
 function prev() {
-    if(currPhoto[31] === '.') {
-        slideImg.src = "Gallery/" +( parseInt(currPhoto[30]) - 1) + ".jpeg"
+    let urlLength = currPhoto.length;
+    if(currPhoto[urlLength-6] === '1') {
+        slideImg.src = "Gallery/" + numOfImg + ".jpeg";
         currPhoto = slideImg.src;
     }
-    else if(currPhoto[32] === '.') {
-        slideImg.src = "Gallery/" +( parseInt(currPhoto[30])*10 + parseInt(currPhoto[31]) - 1) + ".jpeg"
-        currPhoto = slideImg.src;
+    else {
+        if(currPhoto[urlLength-7] === '/') {
+            slideImg.src = "Gallery/" +(parseInt(currPhoto[urlLength-6]) - 1) + ".jpeg"
+            currPhoto = slideImg.src;
+        }
+        else if(currPhoto[urlLength-8] === '/') {
+            slideImg.src = "Gallery/" +(parseInt(currPhoto[urlLength-7])*10 + parseInt(currPhoto[urlLength-6]) - 1) + ".jpeg"
+            currPhoto = slideImg.src;
+        }
+        else if(currPhoto[urlLength-9] === '/') {
+            slideImg.src = "Gallery/" + (parseInt(currPhoto[urlLength-8])*100 + parseInt(currPhoto[urlLength-8])*10 + parseInt(currPhoto[urlLength-6])) - 1 + ".jpeg";
+            currPhoto = slideImg.src;
+        }
     }
+    
 }
 
 
