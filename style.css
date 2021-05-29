@@ -564,6 +564,12 @@ img {
     clip-path: none;
   }
 
+  .about-me-heading {
+    font-size: 2.5em;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+  }
+
   .about-me-text {
     padding: 3em 10em;
     padding-bottom: 10em;
@@ -578,7 +584,8 @@ img {
 
 .contact-main {
   min-height: 84vh;
-  background: var(--bg-dark);
+  background: var(--accent);
+  box-shadow: 0 0 5em rgba(0, 0, 0, 0.5) inset;
   display: flex;
   justify-content: center;
   align-items: center;
