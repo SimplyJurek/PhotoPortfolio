@@ -1,27 +1,121 @@
 .thumbnails-gallery {
-    padding: 2em;
-    list-style-type: none;
-    box-shadow: 0 0 10em rgba(0, 0 , 0, 0.7) inset;
-    display: grid;
-    grid-template-columns: 1fr;
-    place-items: center;
+  padding: 2em;
+  list-style-type: none;
+  box-shadow: 0 0 10em rgba(0, 0, 0, 0.7) inset;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
 }
 .thumbnail {
-    padding: 1em 1em;
-    max-width: 100%;
+  padding: 1em 1em;
+  max-width: 100%;
 }
 
 .thumbnail img {
-    cursor: pointer;
-    max-width: 100%;
+  cursor: pointer;
+  max-width: 70vw;
 }
 
 .slide-player {
-    display: none;
+  display: none;
+}
+.close-player {
+  display: none;
 }
 
 @media only screen and (min-width: 768px) {
-    .thumbnails-gallery {
-        grid-template-columns: 1fr 1fr;
-    }
+  .thumbnails-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+  .thumbnail-img {
+    height: 20vh;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+    width: auto;
+  }
+  .slide-player {
+    display: none;
+    position: absolute;
+    top: 8vh;
+    left: 0;
+    height: 92vh;
+    width: 100vw;
+
+    justify-content: space-evenly;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .slide-player-active {
+    display: flex;
+    position: sticky;
+    top: 8vh;
+    left: 0;
+  }
+  .slide-img {
+    max-width: 70vw;
+    width: auto;
+
+    max-height: 85vh;
+    box-shadow: 0 0 10em rgba(0, 0, 0, 0.5);
+  }
+  /* .body-slide { /* scroll lock for when the slide-player is shown*/
+  /* overflow-y: scroll;
+  }
+  body {
+    overflow: hidden;
+  } */
+  .slide-nav {
+    width: 10vw;
+    height: 20vh;
+
+    border: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0.5em;
+    font-size: 5em;
+    color: var(--bg-dark);
+    cursor: pointer;
+
+    transition: all 250ms ease-in;
+  }
+
+  .slide-nav:is(:hover, :focus) {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .close-player {
+    display: none;
+    position: absolute;
+    right: 5vw;
+    top: 8vh;
+
+    height: 5vh;
+    width: 5vh;
+
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0.5em;
+    color: var(--bg-dark);
+    font-size: 1.5em;
+
+    border: none;
+    cursor: pointer;
+  }
+  .close-player-active {
+    display: inline-block;
+  }
+}
+@media only screen and (min-width: 900px) {
+  .thumbnails-gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .thumbnails-gallery {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+@media only screen and (min-width: 1500px) {
+  .thumbnails-gallery {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
 }
