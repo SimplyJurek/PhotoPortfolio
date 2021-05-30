@@ -1,43 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-    <link rel="stylesheet" href="style.css">
-
-
-    <title>Jerzy Baldy</title>
-</head>
-<body>
-
-    <div class="loader-wrapper">
-        <div class="loader"></div>
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
-    </div>
-
-    <nav class="nav-bar">
-        <div class="logo-container">
-            <h3 class="logo-text">Jerzy Baldy</h3>
-        </div>
-        <ul class="nav-list">
-
-            <li><a href="index.html" class="nav-links">Home</a></li>
-            <li><a href="aboutme.html" class="nav-links">About Me</a></li>
-            <li><a href="contact.html" class="nav-links">Contact</a></li>
-            <li><a href="gallery.html" class="nav-links">Gallery</a></li>
-            <li><a href="login.html" class="nav-links">Log In</a></li>
-
-        </ul>
-        <div class="drop-down">
-            <div class="line-one"></div>
-            <div class="line-two"></div>
-            <div class="line-three"></div>
-        </div>
-    </nav>
+    <?php 
+        include_once "header.php";
+    ?>
+    
     <main>
         <section class="about-me-container">
 
@@ -49,11 +14,9 @@
         </section>
     </main>
 
-    <footer class="footer-container">
-            <address class="footer-text">
-                Made by <a href="#" class="footer-link">Jerzy Baldy</a>, 2021
-            </address>
-        </footer>
+    <?php 
+        require "footer.php";
+    ?>
     
     <script src="hamburger.js"></script>
     <script src="loader.js"></script>
