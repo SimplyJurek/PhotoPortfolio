@@ -8,7 +8,16 @@
         <div class="welcome-img-container">
             <img src="IMG/welcome-img.jpeg" alt="Picture of me" class="welcome-img">
         </div>
-        <h1 class="welcome-text">welcome</h1>
+
+        <?php 
+                if (isset($_SESSION["useruid"])) {
+                    echo "<h1 class=\"welcome-text\">Welcome,<br>".$_SESSION["useruid"]."</h1>";
+                    
+                }   else {
+                    echo "<h1 class=\"welcome-text\">Welcome</h1>";
+                }
+            ?>
+
     </header>
 
     <main>
