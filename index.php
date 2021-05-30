@@ -1,40 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
-
-    <title>Jerzy Baldy</title>
-</head>
-<body>
-
-    <div class="loader-wrapper">
-        <div class="loader"></div>
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
-    </div>
     
-    <nav class="nav-bar">
-        <div class="logo-container">
-            <h3 class="logo-text">Jerzy Baldy</h3>
-        </div>
-        <ul class="nav-list">
-
-            <li><a href="index.html" class="nav-links">Home</a></li>
-            <li><a href="aboutme.html" class="nav-links">About Me</a></li>
-            <li><a href="contact.html" class="nav-links">Contact</a></li>        
-            <li><a href="gallery.html" class="nav-links">Gallery</a></li>
-            <li><a href="login.html" class="nav-links">Log In</a></li>
-        </ul>
-        <div class="drop-down">
-            <div class="line-one"></div>
-            <div class="line-two"></div>
-            <div class="line-three"></div>
-        </div>
-    </nav>
+    <?php 
+        include_once "header.php";
+    ?>
     
     <header class="welcome-container">
         <div class="welcome-img-container">
@@ -64,22 +32,20 @@
             <p class="my-story-text" id="text-three">Despite having less time nowadys due to college and work I still consider a day wasted without making at least a hundred photos. My galllery is still growing and they represent my journey through life and it's many surprises. Join me on this adventure and help me gather more memories!</p>
 
             <div class="my-story-button-container">
-                <a href="contact.html" class="my-story-button-link">Let's work together!</a>
+                <a href="contact.php" class="my-story-button-link">Let's work together!</a>
             </div>
         </section>
 
         <section class="counter-section">
             <div class="couter-container">
                 <p class="counter-text">So far, I have uploaded<span class="counter">20</span>photos.</p>
-                <a href="gallery.html" class="counter-link">Click here to see them all!</a>
+                <a href="gallery.php" class="counter-link">Click here to see them all!</a>
             </div>
         </section>
 
-        <footer class="footer-container">
-            <address class="footer-text">
-                Made by <a href="#" class="footer-link">Jerzy Baldy</a>, 2021
-            </address>
-        </footer>
+        <?php 
+        require "footer.php";
+        ?>
 
     </main>
     

@@ -671,12 +671,27 @@ img {
   grid-template-columns: 100vw;
   grid-template-rows: 10vh 10vh 44vh 5vh 5vh 10vh;
   grid-template-areas:
-    '.'
+    'error-message'
     'login-text'
     'login-form'
     'login-text-two'
     'signup-link'
     '.';
+}
+
+.error-message,
+.error-login {
+  grid-area: error-message;
+  color: red;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.error-none {
+  grid-area: error-message;
+  color: green;
+  font-size: 1em;
+  font-weight: 500;
 }
 
 .login-text {

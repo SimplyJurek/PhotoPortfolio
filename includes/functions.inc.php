@@ -3,7 +3,7 @@
     function emptyInputSignup($email, $uid, $pwd, $repeatPwd)   {
         $result;
 
-        if(empty($email) || empty($uid) || empty($pwd), || empty($repeatPwd))   {
+        if(empty($email) || empty($uid) || empty($pwd) || empty($repeatPwd))   {
             $result = true;
         }   else {
             $result = false;
@@ -14,7 +14,7 @@
     function invalidUid($uid)   {
         $result;
 
-        if(!preg_match("/^[a-zA-Z0-9]*$/"), $uid)   {
+        if(!preg_match("/^[a-zA-Z0-9]*$/", $uid))   {
             $result = true;
         }   else {
             $result = false;
@@ -72,7 +72,7 @@
         $stmt = mysqli_stmt_init($conn);
 
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("location: ../signup.html?error=stmtfailed");
+            header("location: ../signup.php?error=stmtfailed");
             exit();
         }
 
@@ -83,6 +83,41 @@
 
         mysqli_stmt_close($stmt);
 
-        header("location: ../signup")
+        header("location: ../signup.php?error=none");
         exit();
+    }
+
+    function emptyInputLogin($uid, $pwd)   {
+        $result;
+
+        if(empty($uid) || empty($pwd))   {
+            $result = true;
+        }   else {
+            $result = false;
+        }
+        return $result;
+    }
+
+    function loginUser($conn, $uid, $pwd)   {
+        $uidExists = uidExists($conn, $uid, $uid);
+
+        if ($uidExists === false) {
+            header("location: ../login.php?error=wronglogin");
+            exit();
+        }
+
+        $pwdHashed = $uidExists["usersPwd"];
+        $checkPwd = password_verify($pwd, $pwdHashed);
+
+        if ($checkPwd === false) {
+            header("location: ../login.php?error=wrongpwd");
+            exit();
+        }   elseif ($checkPwd === true) {
+            session_start();
+            $_SESSION["userid"] = $uidExists["usersId"];
+            $_SESSION["useruid"] = $uidExists["usersUid"];
+            
+            header("location: ../index.php");
+            exit();
+        }
     }

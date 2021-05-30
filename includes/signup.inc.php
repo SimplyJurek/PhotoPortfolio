@@ -11,27 +11,27 @@
         require_once 'functions.inc.php';
 
         if (emptyInputSignup($email, $uid, $pwd, $repeatPwd) !== false) {
-            header("location: ../signup.html?error=emptyinput");
+            header("location: ../signup.php?error=emptyinput");
             exit();
         }
 
         if (invalidUid($uid) !== false) {
-            header("location: ../signup.html?error=invaliduid");
+            header("location: ../signup.php?error=invaliduid");
             exit();
         }
 
         if (invalidEmail($email) !== false) {
-            header("location: ../signup.html?error=invalidemail");
+            header("location: ../signup.php?error=invalidemail");
             exit();
         }
 
         if (pwdMatch($pwd, $repeatPwd) !== false) {
-            header("location: ../signup.html?error=pwddontmatch");
+            header("location: ../signup.php?error=pwddontmatch");
             exit();
         }
 
         if (uidExists($conn, $uid, $email) !== false) {
-            header("location: ../signup.html?error=uidtaken");
+            header("location: ../signup.php?error=uidtaken");
             exit();
         }
 
